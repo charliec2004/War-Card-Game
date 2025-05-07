@@ -1,4 +1,4 @@
-import chalk from 'chalk'; // Importing chalk for colored console output
+import pc from 'picocolors'; // Importing picocolors for colored console output
 
 const cardDeck = [ // Hard Coded Deck of Cards for simplicity
 
@@ -104,12 +104,12 @@ function startWar(p1Deck, p2Deck, p1Card, p2Card, acc1 = [], acc2 = []) {
   // if someone can’t continue, the other takes all
   if (p1Deck.length < 4) {
     p2Deck.unshift(...pile1, ...pile2, ...p1Deck.splice(0));
-    console.log(chalk.redBright("Player 1 does not have enough cards to go to War!"));
+    console.log(pc.red("Player 1 does not have enough cards to go to War!"));
     return;
   }
   if (p2Deck.length < 4) {
     p1Deck.unshift(...pile1, ...pile2, ...p2Deck.splice(0));
-    console.log(chalk.redBright("Player 2 does not have enough cards to go to War!"));
+    console.log(pc.red("Player 2 does not have enough cards to go to War!"));
     return;
   }
 
@@ -123,29 +123,29 @@ function startWar(p1Deck, p2Deck, p1Card, p2Card, acc1 = [], acc2 = []) {
 
   const res = compareTwoCards(newP1, newP2);
 
-  console.log(chalk.redBright("⚔️  WAR IS DECLARED! ⚔️"));
-  console.log(chalk.red("Each player MUST draw 3 cards face DOWN and 1 card FACE UP"));
-  console.log(chalk.bgBlack(`PLAYER 1 Face Up CARD: ${newP1.name}`));
-  console.log(chalk.bgBlack(`PLAYER 2 Face Up CARD: ${newP2.name}`));
+  console.log(pc.redBright("⚔️  WAR IS DECLARED! ⚔️"));
+  console.log(pc.red("Each player MUST draw 3 cards face DOWN and 1 card FACE UP"));
+  console.log(pc.red(`PLAYER 1 Face Up CARD: ${newP1.name}`));
+  console.log(pc.red(`PLAYER 2 Face Up CARD: ${newP2.name}`));
 
   if (res === true) {
     // winner takes entire pile + this face-up
 
     p1Deck.unshift(...pile1, newP1, ...pile2, newP2);
 
-    console.log(chalk.redBright("Player 1 WINS THE WAR!"));
+    console.log(pc.redBright("Player 1 WINS THE WAR!"));
 
   } else if (res === false) {
 
 
     p2Deck.unshift(...pile1, newP1, ...pile2, newP2);
 
-    console.log(chalk.redBright("Player 2 WINS THE WAR!"));
+    console.log(pc.redBright("Player 2 WINS THE WAR!"));
 
   } else {
     // tie: recurse, FUTURE NOTE: *don’t* push newP1/newP2 into pile arrays here!
     console.log("\n");
-    console.log(chalk.redBright("⚔️ THE CARDS ARE THE SAME ... AGAIN?!?!"));
+    console.log(pc.redBright("⚔️ THE CARDS ARE THE SAME ... AGAIN?!?!"));
     startWar(p1Deck, p2Deck, newP1, newP2, pile1, pile2);
   }
 }
@@ -160,11 +160,11 @@ function playRound (player1Deck, player2Deck) {
     const result = compareTwoCards(player1Card, player2Card);
 
     if (result === true) { 
-        console.log(chalk.blueBright("Player 1 Wins!"));
+        console.log(pc.blueBright("Player 1 Wins!"));
         player1Deck.unshift(player2Card);
         player1Deck.unshift(player1Card);
     } else if (result === false) {
-        console.log(chalk.blueBright("Player 2 Wins!"));
+        console.log(pc.blueBright("Player 2 Wins!"));
         player2Deck.unshift(player1Card);
         player2Deck.unshift(player2Card);
     } else { // If the cards are equal, start a war (null)
@@ -198,23 +198,31 @@ console.log("\n");
 console.log("Player 2 Deck:");
 console.log(player2Deck);
 console.log("\n");
-console.log("Starting the game...");
+console.log(pc.bgBlackBright("Starting the game..."));
 console.log("\n");
 console.log(`Players Starting Deck Lengths: ${player1Deck.length}, ${player2Deck.length}\n`);
 console.log("\n");
 
-while (player1Deck.length > 0 && player2Deck.length > 0) {
 
-    playRound(player1Deck, player2Deck);
-    console.log(`Player 1 Deck Length: ${chalk.greenBright(player1Deck.length)}`);
-    console.log(`Player 2 Deck Length: ${chalk.greenBright(player2Deck.length)}\n`);
+function advanceGame() {
+    if (player1Deck.length > 0 && player2Deck.length > 0) {
+        playRound(player1Deck, player2Deck);
+        console.log(`Player 1 Deck Length: ${pc.greenBright(player1Deck.length)}`);
+        console.log(`Player 2 Deck Length: ${pc.greenBright(player2Deck.length)}\n`);
+    };
+
+    // always look for a winner, after each round
+    if (player1Deck.length === 0) {
+        console.log(pc.bgRedBright("Player 2 Wins the Game!"));
+        btn.disabled = true;        // disable BTN with html attribute
+    };
+    if (player2Deck.length === 0) {
+        console.log(pc.bgRedBright("Player 1 Wins the Game!"));
+        btn.disabled = true;
+    };
 };
 
-if (player1Deck.length === 0) {
-    console.log(chalk.bgRedBright("Player 2 Wins the Game!"));
-}
-else if (player2Deck.length === 0) {
-    console.log(chalk.bgRedBright("Player 1 Wins the Game!"));
-} else {
-    console.log("Game Over!, Possible ERROR");
-}
+// TEST BTN
+const btn = document.getElementById('BTN');
+
+btn.addEventListener('click', advanceGame);

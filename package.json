@@ -1,6 +1,13 @@
 {
   "type": "module",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
+  },
   "dependencies": {
-    "chalk": "^5.4.1"
+    "picocolors": "^1.1.1"
   }
 }
