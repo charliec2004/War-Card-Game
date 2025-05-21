@@ -170,6 +170,9 @@ function playRound (player1Deck, player2Deck) {
     } else { // If the cards are equal, start a war (null)
         startWar(player1Deck, player2Deck, player1Card, player2Card);
     };
+
+    // TODO: RETURN RESULT OF ROUND + PlAYED CARDS
+
 };
 
 
