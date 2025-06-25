@@ -3,13 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test</title>
-  <link rel="stylesheet" href="style.css">
+  <title>WAR!</title>
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/cardanimate.css">
+
 </head>
 <body>
 
-  <button id="BTN">Play Round</button>
+
+  <header class="header-box">
+    <h1>War</h1>
+    <div class="header-spacer"></div>
+    <button class="play-btn">Play</button>
+    <button class="rules-btn">Rules</button>
+  </header>
+
+  <main>
+    <div id="message" class="result-box">
+      <p>Welcome to WAR!</p>
+    </div>
+    <!-- defines where the card display is -->
+    <div class="deck-container"> 
+      <div class="deck">
+        <p id="p1-deck-size" class="deck-info">26 Cards</p>
+        <playing-card id="p1-card" cid="Ah"></playing-card>
+      </div>
+      <div class="deck">
+        <p id="p2-deck-size" class="deck-info">26 Cards</p>
+        <playing-card id="p2-card" cid="As"></playing-card>
+      </div>
+
+    </div>
+    <button id="next-round-btn" class="play-round">Play Round</button>
+  </main>
+
+  <footer>
+    <p>© 2025 Charlie Conner. All rights reserved.</p>
+  </footer>
+
   
+  <script src="scripts/playing-cards.js"></script>
   <script type="module" src="main.js"></script>
 </body>
 </html>

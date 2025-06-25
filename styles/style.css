@@ -1,0 +1,52 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* ADDED: disable scrolling */
+    height: 100%;
+    overflow: hidden;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    box-sizing: inherit;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F8F8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    
+    
+}
+
+html, body {
+  /* make sure they span the full viewport */
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  /* kill all scrolling */
+  overflow: hidden;
+  position: fixed;
+}
+

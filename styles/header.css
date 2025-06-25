@@ -1,0 +1,42 @@
+.header-box {
+  display: flex;
+  flex-direction: row;
+  background-color: #D9D9D9;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  height: 40px;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  top:0;
+}
+
+.header-spacer {
+  flex-grow: 1;
+  height: 100%;
+  width: 80vw;
+}
+
+.header-box h1 {
+  font-family: Itim, sans-serif;
+  font-size: 24px;
+  color: #000;
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  margin-left: 10px;
+  align-self: center;
+}
+
+.header-box button {
+  font-family: Inter, sans-serif;
+  letter-spacing: -0.04em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+  margin-right: 20px;
+  padding: 0;
+}

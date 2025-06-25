@@ -1,5 +1,7 @@
 # War Card Game
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A simple browser version of the classic War card game. It uses ES6 modules, bundled with Parcel, and logs game events in the browser console.
 
 ## Features
@@ -59,3 +61,11 @@ Deploy the contents of the `dist/` folder to any static hosting service.
 ├── package.json  # npm scripts and dependencies
 └── README.md     # Project overview and instructions
 ```
+
+## Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## License
+
+This project is released under the MIT License. See the `LICENSE` file for details.

@@ -18,14 +18,14 @@ export function startWar(p1Deck, p2Deck, p1Card, p2Card, acc1 = [], acc2 = []) {
     console.log(
       `Player 1 cannot continue the war → Player 2 collects ${pile1.length + pile2.length + p1Deck.length} cards.`
     );
-    return;
+    return 4; // Player 1 goes broke
   }
   if (p2Deck.length < 4) {
     p1Deck.unshift(...pile1, ...pile2, ...p2Deck.splice(0));
     console.log(
       `Player 2 cannot continue the war → Player 1 collects ${pile1.length + pile2.length + p2Deck.length} cards.`
     );
-    return;
+    return 3; // Player 2 goes broke
   }
 
   // face-down: take last 3
@@ -46,12 +46,14 @@ export function startWar(p1Deck, p2Deck, p1Card, p2Card, acc1 = [], acc2 = []) {
     console.log(
       `Player 1 wins the war and takes ${pile1.length + pile2.length} cards.`
     );
+    return 1; // P1 Wins
   } else if (res === false) {
     // player 2 wins this war
     p2Deck.unshift(...pile1, ...pile2);
     console.log(
       `Player 2 wins the war and takes ${pile1.length + pile2.length} cards.`
     );
+    return 2; // P2 Wins
   } else {
     // tie → recurse
     console.log(

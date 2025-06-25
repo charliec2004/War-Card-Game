@@ -1,0 +1,85 @@
+/* * {
+  border: 1px red solid
+} */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  max-height: 95vh;
+  width: 100%;
+  background-color: transparent;
+  padding-top: 40px;
+}
+
+.result-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vh;
+
+  font-family: Itim, sans-serif;
+  font-size: 3rem;
+}
+
+.deck-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  height: auto;
+  width: 70vw;
+
+  gap: 5rem;
+}
+
+.deck {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 250px;
+  height: auto;
+  gap: 0.75rem;
+}
+
+.deck-info{
+  font-family: Inter, sans-serif;
+  font-size: 1.1rem;
+  color: #000;
+  text-align: center;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+playing-card {
+  width: 100%;
+  height: 100%
+
+}
+
+
+
+
+.play-round {
+  background-color: #007AFF;
+  color: whitesmoke;
+  border: none;
+  border-radius: 30px;
+  width: 150px;
+  height: 50px;
+  padding: 10px;
+  margin-top: 1rem;
+
+  font-family: Inter, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  cursor: pointer;
+
+}
+
