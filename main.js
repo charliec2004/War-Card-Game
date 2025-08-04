@@ -2,9 +2,9 @@
 // Entry point: wire up UI, advanceGame logic, and initial deal
 
 import pc from 'picocolors';
-import { splitDealDeck } from './game.js';
-import { playRound } from './round.js';
-import { updateMessage, updateDeckSize } from './ui.js';
+import { splitDealDeck } from './js/game.js';
+import { playRound } from './js/round.js';
+import { updateMessage, updateDeckSize } from './js/ui.js';
 
 // Attach nxt round button
 const btn = document.getElementById('next-round-btn');

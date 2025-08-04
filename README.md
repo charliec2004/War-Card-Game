@@ -50,16 +50,19 @@ Deploy the contents of the `dist/` folder to any static hosting service.
 
 ```text
 .
-├── deck.js       # Deck data (52 cards)
-├── utils.js      # Randomness and shuffle helpers
-├── game.js       # Core logic (compare cards, deal decks)
-├── war.js        # Recursive war logic for ties
-├── round.js      # Single-round play logic
-├── main.js       # Entry point and UI hookup
-├── index.html    # Web page with Play Round button
-├── style.css     # Basic layout and centering
-├── package.json  # npm scripts and dependencies
-└── README.md     # Project overview and instructions
+├── js/
+│   ├── deck.js       # Deck data (52 cards)
+│   ├── utils.js      # Randomness and shuffle helpers
+│   ├── game.js       # Core logic (compare cards, deal decks)
+│   ├── war.js        # Recursive war logic for ties
+│   ├── round.js      # Single-round play logic
+│   ├── ui.js         # UI update functions
+│   └── playing-cards.js  # Custom card element library
+├── styles/           # CSS files
+├── main.js           # Entry point and UI hookup
+├── index.html        # Web page with Play Round button
+├── package.json      # npm scripts and dependencies
+└── README.md         # Project overview and instructions
 ```
 
 ## Contributing
