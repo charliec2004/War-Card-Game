@@ -83,3 +83,22 @@ playing-card {
 
 }
 
+@media (max-width: 1024px) {
+  .deck-container {
+    width: 90vw;
+  }
+
+  .deck {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .deck-container {
+    gap: 2rem;
+  }
+
+  .deck {
+    width: 150px;
+  }
+}
