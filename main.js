@@ -1,7 +1,6 @@
 // main.js
 // Entry point: wire up UI, advanceGame logic, and initial deal
 
-import pc from 'picocolors';
 import { splitDealDeck } from './js/game.js';
 import { playRound } from './js/round.js';
 import { updateMessage, updateDeckSize } from './js/ui.js';
@@ -43,13 +42,13 @@ export function advanceGame() {
     */
     updateDeckSize(1, player1Deck.length);
     updateDeckSize(2, player2Deck.length);
-    console.log(`Deck lengths: ${pc.greenBright(player1Deck.length)} vs ${pc.greenBright(player2Deck.length)}`);
+    console.log(`Deck lengths: ${player1Deck.length} vs ${player2Deck.length}`);
     return;
   }
 
   // check if any players won after the round -> log winners
-  if (player1Deck.length === 0) console.log(pc.bgRedBright('Player 2 Wins!'));
-  else console.log(pc.bgRedBright('Player 1 Wins!'));
+  if (player1Deck.length === 0) console.log('Player 2 Wins!');
+  else console.log('Player 1 Wins!');
 
   // disable the next round btn if a player won
   if (btn) btn.disabled = true;
