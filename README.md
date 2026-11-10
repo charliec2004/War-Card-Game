@@ -25,7 +25,7 @@ Clone the repository and install dependencies:
 ```bash
 git clone <repo-url>
 cd War-Card-Game
-npm install
+pnpm install
 ```
 
 ## Development
@@ -33,7 +33,7 @@ npm install
 Start the development server:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Open the app in your browser at <http://localhost:1234>.
@@ -41,7 +41,7 @@ Open the app in your browser at <http://localhost:1234>.
 ## Production Build
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 Deploy the contents of the `dist/` folder to any static hosting service.
